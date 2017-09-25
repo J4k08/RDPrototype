@@ -1,0 +1,21 @@
+<form class="well" (submit)="addRoom($event)">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add room...">
+    </div>
+</form>
+
+<div class="room-list">
+    <div *ngFor="let room of rooms">
+
+    <div class="col-md-1">
+        <input type="checkbox" [checked]="room.isFree" (click)="updateStatus(room)">
+    </div>
+    <div class="col-md-7">
+        {{room.name}}
+    </div>
+    <div class="col-md-4">
+        <input type="button" (click)="deleteRoom(room._id)" value="Delete" class="btn btn-danger">
+    </div>
+        <br><br>
+    </div>
+</div>
