@@ -29,7 +29,6 @@ router.get('/room:id', function(request, response, next){
 });
 
 //Save Room
-
 router.post('/room',function(request, response, next) {
     var room = request.body;
     if(!room.name || !(room.isFree + '')) {
